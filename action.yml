@@ -1,0 +1,25 @@
+name: 'attach-labels'
+description: 'Attach labels to PRs or Issues'
+author: 'KeisukeYamashita'
+inputs:
+  labels:
+    required: true
+    description: 'Comma seperated labes that target pull request should have'
+  repository:
+    required: false
+    description: 'The GitHub repository containing the issue or pr.'
+    default: ${{ github.repository }}
+  number:
+    required: false
+    description: 'Number of the pull request'
+    default: ${{ github.event.pull_request.number }}
+  token:
+    required: false
+    description: 'Credential to access to the repo to post the comment'
+    default: ${{ github.token }}
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'bookmark'
+  color: 'red'
