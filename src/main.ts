@@ -1,4 +1,4 @@
-import * as github from '@actions/github';
+import * as github from '@actions/github'
 import * as core from '@actions/core'
 import {Inputs, Labeler} from './labeler'
 import {inspect} from 'util'
@@ -11,11 +11,14 @@ async function run(): Promise<void> {
       labels: [],
       owner,
       repo,
-      number: core.getInput('number') === '' ? github.context.issue.number : Number(core.getInput('number')),
-      token: core.getInput('token'),
+      number:
+        core.getInput('number') === ''
+          ? github.context.issue.number
+          : Number(core.getInput('number')),
+      token: core.getInput('token')
     }
 
-    let rawLabels = core.getInput('labels', {required: true})
+    const rawLabels = core.getInput('labels', {required: true})
     if (rawLabels.includes('\n')) {
       inputs.labels = rawLabels.split('\n').filter(l => l === '')
     } else {
