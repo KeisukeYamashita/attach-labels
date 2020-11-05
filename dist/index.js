@@ -116,7 +116,7 @@ function run() {
             };
             const rawLabels = core.getInput('labels', { required: true });
             if (rawLabels.includes('\n')) {
-                inputs.labels = rawLabels.split('\n').filter(l => l === '');
+                inputs.labels = rawLabels.split('\n').filter(l => l !== '');
             }
             else {
                 inputs.labels = rawLabels.split(',');
