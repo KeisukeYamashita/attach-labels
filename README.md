@@ -4,7 +4,8 @@
 [![Mergify Status][mergify-status]][mergify]
 
 A GitHub Action that attach label(s) to a PR or an Issue.
-This action extract the number from a pull request which has triggered this by default. You don't need to specify the pull request number by `${{ github.event.pull_request.number }}`.
+This action extract the number from a pull request or issue by default. You don't need to specify the pull request number by `${{ github.event.pull_request.number }}` or `${{ github.event.issue.number }}` by your own.
+Very simple!
 
 ## Usage
 ### 1. With comma seperated labels list
