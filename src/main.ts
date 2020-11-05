@@ -25,6 +25,10 @@ async function run(): Promise<void> {
       inputs.labels = rawLabels.split(',')
     }
 
+    if (inputs.labels.length === 0) {
+      throw new Error('no label input')
+    }
+
     core.debug(`Inputs: ${inspect(inputs)}`)
 
     const labeler = new Labeler(inputs)

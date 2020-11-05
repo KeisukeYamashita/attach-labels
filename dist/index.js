@@ -121,6 +121,9 @@ function run() {
             else {
                 inputs.labels = rawLabels.split(',');
             }
+            if (inputs.labels.length === 0) {
+                throw new Error('no label input');
+            }
             core.debug(`Inputs: ${util_1.inspect(inputs)}`);
             const labeler = new labeler_1.Labeler(inputs);
             yield labeler.attachLabels();
