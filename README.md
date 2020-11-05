@@ -3,10 +3,6 @@
 [![GitHub Marketplace][MarketPlace]][MarketPlace-status]
 [![Mergify Status][mergify-status]][mergify]
 
-<p align="center">
-  <img src="https://media.giphy.com/media/TbYgHMnICI1A4/giphy.gif" style="width:70%;margin:20px 0px;">
-<p align="center">
-
 A GitHub Action that attach label(s) to a PR or an Issue.
 This action extract the number from a pull request which has triggered this by default. You don't need to specify the pull request number by `${{ github.event.pull_request.number }}`.
 
